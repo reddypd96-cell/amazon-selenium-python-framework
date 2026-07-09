@@ -35,7 +35,7 @@ The automated test covers the following workflow:
 8. Navigate to Orders
 9. Track the latest order
 
-> **Note** - The framework is made in a way that as we doing testing in real production we are not proceeding with real place order
+> **Note** - The framework is made in a way that as we doing testing in real production we are not proceeding with real place order.
 
 ---
 
