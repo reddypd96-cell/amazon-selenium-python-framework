@@ -15,7 +15,7 @@ class SearchResultsPage(BasePage):
         "//div[@data-component-type='s-search-result']"
     )
 
-    # Inline "Add to cart" button on a search result card
+   
     _ADD_TO_CART_ON_CARD = [
         (By.XPATH,
          "(//div[@data-component-type='s-search-result']"
@@ -28,7 +28,7 @@ class SearchResultsPage(BasePage):
          "//*[contains(@aria-label,'Add to cart') or contains(@title,'Add to cart')])[1]"),
     ]
 
-    # "Maximum Quantity Reached" modal close button
+    
     _MAX_QTY_POPUP_CLOSE = [
         (By.XPATH, "//button[@data-action='a-popover-close']"),
         (By.XPATH,
