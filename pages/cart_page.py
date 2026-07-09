@@ -4,7 +4,7 @@ from pages.base_page import BasePage
 
 class CartPage(BasePage):
     CART_TITLE = (By.ID, "sc-active-cart")
-    # "Proceed to Buy" on amazon.in submits this same form field.
+    
     PROCEED_TO_BUY_BUTTON = (By.NAME, "proceedToRetailCheckout")
 
     def is_item_in_cart(self):
