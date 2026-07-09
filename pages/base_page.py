@@ -1,7 +1,4 @@
-"""
-Base class for all Page Objects.
-Provides reusable Selenium wrapper methods with explicit waits.
-"""
+
 
 import os
 import time
@@ -53,9 +50,9 @@ class BasePage:
             EC.presence_of_all_elements_located(locator)
         )
 
-    # ------------------------
-    # Actions
-    # ------------------------
+  
+    # Actions methods
+  
 
     def click(self, locator):
         element = self.find_clickable(locator)
@@ -80,9 +77,7 @@ class BasePage:
     def get_text(self, locator):
         return self.find(locator).text
 
-    # ------------------------
-    # Visibility
-    # ------------------------
+# explicit Waits for visibility
 
     def is_visible(self, locator, timeout=None):
         try:
@@ -95,9 +90,9 @@ class BasePage:
         except TimeoutException:
             return False
 
-    # ------------------------
+   
     # Navigation
-    # ------------------------
+    
 
     def go_to_cart(self):
         from pages.cart_page import CartPage
@@ -111,9 +106,7 @@ class BasePage:
         self.click(self.RETURNS_AND_ORDERS_LINK)
         return OrderTrackingPage(self.driver)
 
-    # ------------------------
-    # Screenshot
-    # ------------------------
+   
 
     def screenshot(self, name):
         os.makedirs(config.SCREENSHOT_DIR, exist_ok=True)
@@ -124,9 +117,9 @@ class BasePage:
         self.driver.save_screenshot(path)
         return path
 
-    # ------------------------
+   
     # Utilities
-    # ------------------------
+
 
     def wait_for_url_contains(self, text):
         self.wait.until(EC.url_contains(text))
