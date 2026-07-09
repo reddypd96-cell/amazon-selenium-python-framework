@@ -4,10 +4,7 @@ from config import config
 
 
 class OrderTrackingPage(BasePage):
-    """
-    Represents Amazon's 'Your Orders' page, reached via the
-    "Returns & Orders" link in the nav bar.
-    """
+  
 
     ORDER_CARD = (By.CSS_SELECTOR, "div.order-card")
     TRACK_PACKAGE_BUTTON = (By.XPATH, "//span[contains(text(),'Track package')]")
