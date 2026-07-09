@@ -115,7 +115,7 @@ Update the following values inside `.env`:
 ```
 AMAZON_MOBILE_NUMBER=
 AMAZON_PASSWORD=
-SEARCH_TERM=iphone
+SEARCH_TERM=earbuds
 HEADLESS=false
 PLACE_REAL_ORDER=false
 ```
