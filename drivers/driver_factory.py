@@ -1,8 +1,4 @@
-"""
-Driver Factory
 
-Creates a fresh Chrome browser for every test.
-"""
 
 import tempfile
 
@@ -24,15 +20,13 @@ class DriverFactory:
 
             options = webdriver.ChromeOptions()
 
-            # ==========================
-            # Headless
-            # ==========================
+            
             if config.HEADLESS:
                 options.add_argument("--headless=new")
 
-            # ==========================
-            # Browser Options
-            # ==========================
+          
+            # desired Browser Options
+         
             options.add_argument("--start-maximized")
             options.add_argument("--disable-notifications")
             options.add_argument("--disable-popup-blocking")
@@ -41,7 +35,7 @@ class DriverFactory:
             options.add_argument("--no-sandbox")
             options.add_argument("--disable-gpu")
 
-            # Disable automation banner
+           
             options.add_argument("--disable-blink-features=AutomationControlled")
 
             options.add_experimental_option(
@@ -54,9 +48,7 @@ class DriverFactory:
                 False
             )
 
-            # ==========================
-            # Disable Password Manager
-            # ==========================
+           #password notifcation blocker
             prefs = {
                 "credentials_enable_service": False,
                 "profile.password_manager_enabled": False,
@@ -79,7 +71,7 @@ class DriverFactory:
                 options=options
             )
 
-            # Hide webdriver property
+         
             driver.execute_script("""
                 Object.defineProperty(
                     navigator,
