@@ -14,7 +14,7 @@ log = get_logger(__name__)
 
 class CheckoutPage(BasePage):
 
-    # --- Cash on Delivery locators (multiple variants Amazon uses) ---
+    #  Cash on Delivery
     _COD_CANDIDATES = [
         # Variant 1: radio input inside a label that contains "Cash on Delivery"
         (By.XPATH,
@@ -32,7 +32,7 @@ class CheckoutPage(BasePage):
          "//*[contains(@aria-label,'Cash on Delivery') or contains(@aria-label,'Cash On Delivery')]"),
     ]
 
-    # --- "Use this payment method" / Continue button ---
+    # "Use this payment method and Continue button"
     _CONTINUE_PAYMENT_CANDIDATES = [
         (By.XPATH,
          "//input[@name='ppw-widgetEvent:SetPaymentPlanSelectContinueEvent']"),
@@ -52,7 +52,7 @@ class CheckoutPage(BasePage):
 
     PLACE_ORDER_BUTTON = (By.NAME, "placeYourOrder1")
 
-    # ------------------------------------------------------------------
+  
 
     def select_cash_on_delivery(self):
         """
